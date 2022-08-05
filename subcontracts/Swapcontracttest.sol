@@ -2,16 +2,17 @@
 
 pragma solidity >=0.6.6 <0.8.0;
 
-import './utils/Ownable.sol';
-import './UniswapV2Library.sol';
-import './interfaces/IERC20.sol';
-import './interfaces/IUniswapV2Pair.sol';
-import './interfaces/IUniswapV2Factory.sol';
-import './interfaces/IUniswapV2Router02.sol';
+import "./utils/Ownable.sol";
+import "./UniswapV2Library.sol";
+import "./interfaces/IERC20.sol";
+import "./interfaces/IUniswapV2Pair.sol";
+import "./interfaces/IUniswapV2Factory.sol";
+import "./interfaces/IUniswapV2Router02.sol";
 
 contract Swapcontracttest is Ownable {
     // https://testnet.bscscan.com/address/0xD99D1c33F9fC3444f8101754aBC46c52416550D1#code
-    address private constant pancakeRouter = 0xD99D1c33F9fC3444f8101754aBC46c52416550D1;
+    address private constant pancakeRouter =
+        0xD99D1c33F9fC3444f8101754aBC46c52416550D1;
     // https://testnet.bscscan.com/address/0x094616f0bdfb0b526bd735bf66eca0ad254ca81f
     address private constant WBNB = 0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F;
 
@@ -20,8 +21,8 @@ contract Swapcontracttest is Ownable {
     function startSwap(
         address token0,
         address token1,
-        uint amount0,
-        uint amount1
+        uint256 amount0,
+        uint256 amount1
     ) external {
         // transfer input tokens to this contract address
         IERC20(token0).transferFrom(msg.sender, address(this), amount0);
@@ -56,4 +57,3 @@ contract Swapcontracttest is Ownable {
 
     receive() external payable {}
 }
-

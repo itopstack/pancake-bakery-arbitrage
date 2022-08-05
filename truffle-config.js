@@ -1,5 +1,5 @@
-require('dotenv').config();
-const HDWalletProvider = require('@truffle/hdwallet-provider');
+require("dotenv").config();
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -74,19 +74,18 @@ module.exports = {
     // },
 
     mainnet: {
-      provider: () => new HDWalletProvider(
-        process.env.PRIVATE_KEY,
-        process.env.BSC_HTTPS
-      ),
-      network_id: 56
+      provider: () =>
+        new HDWalletProvider(process.env.PRIVATE_KEY, process.env.BSC_HTTPS),
+      network_id: 56,
     },
 
     testnet: {
-      provider: () => new HDWalletProvider(
-        process.env.PRIVATE_TEST_KEY,
-        process.env.BSC_TEST_HTTPS
-      ),
-      network_id: 97
+      provider: () =>
+        new HDWalletProvider(
+          process.env.PRIVATE_TEST_KEY,
+          process.env.BSC_TEST_HTTPS
+        ),
+      network_id: 97,
     },
 
     // Useful for private networks
@@ -105,7 +104,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: ">=0.6.6 <0.8.0",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: ">=0.6.6 <0.8.0", // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
@@ -114,7 +113,7 @@ module.exports = {
       //  },
       //  evmVersion: "byzantium"
       // }
-    }
+    },
   },
 
   // Truffle DB is currently disabled by default; to enable it, change enabled: false to enabled: true
@@ -124,6 +123,6 @@ module.exports = {
   // $ truffle migrate --reset --compile-all
 
   db: {
-    enabled: false
-  }
+    enabled: false,
+  },
 };
